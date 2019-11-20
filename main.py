@@ -5,7 +5,7 @@ from config import (
     FIDESYS_LIBPATH,
     FIDESYS_PYTHONPATH,
     FIDESYS_VERSION,
-    PVPYTHON
+    PVPYTHON,
 )
 import os
 import sys
@@ -23,35 +23,31 @@ import subprocess
 from fidesys import FidesysComponent
 import cubit
 
-# displacement_x = 0.1
-# displacement_y = 0.1
+displacement_x = 0.05
+displacement_y = 0.05
 
-# with open("template_2d.txt") as template:
-#     script = (
-#         template.read()
-#         .format(displacement_x=displacement_x, displacement_y=displacement_y)
-#         .split("\n")
-#     )
+with open("template_2d.txt") as template:
+    script = (
+        template.read()
+        .format(displacement_x=displacement_x, displacement_y=displacement_y)
+        .split("\n")
+    )
 
 
-# cubit.init([""])
-# fc = FidesysComponent()
-# fc.start_up_no_args()
+cubit.init([""])
+fc = FidesysComponent()
+fc.start_up_no_args()
 
-# for command in script:
-#     cubit.cmd(command)
-# fc.writeFC(r"C:\Projects\effective_yield_surface\test.fc", True)
-# subprocess.call(
-#     [
-#         FIDESYS_CALC,
-#         r"--input=C:\Projects\effective_yield_surface\test.fc",
-#         r"--output=C:\Projects\effective_yield_surface\test.pvd",
-#     ]
-# )
-# cubit.destroy()
+for command in script:
+    cubit.cmd(command)
+fc.writeFC(r"C:\Projects\effective_yield_surface\test.fc", True)
 subprocess.call(
     [
-        PVPYTHON,
-        "postprocess.py"
+        FIDESYS_CALC,
+        r"--input=C:\Projects\effective_yield_surface\test.fc",
+        r"--output=C:\Projects\effective_yield_surface\test.pvd",
     ]
 )
+cubit.destroy()
+subprocess.call([PVPYTHON, r"C:\Projects\effective_yield_surface\postprocess.py"])
+
