@@ -1,14 +1,16 @@
+import os
+import subprocess
+import sys
+
+import cubit
 from config import (
     FIDESYS_BASE_FOLDER,
     FIDESYS_CALC,
-    FIDESYS_COM_PATH,
     FIDESYS_LIBPATH,
     FIDESYS_PYTHONPATH,
-    FIDESYS_VERSION,
     PVPYTHON,
 )
-import os
-import sys
+from fidesys import FidesysComponent
 
 for subpath in FIDESYS_PYTHONPATH:
     sys.path.append(FIDESYS_BASE_FOLDER + subpath)
@@ -19,9 +21,6 @@ os.environ["PATH"] = (
     + os.environ.get("PATH", "")
 )
 
-import subprocess
-from fidesys import FidesysComponent
-import cubit
 
 displacement_x = 0.05
 displacement_y = 0.05
@@ -50,4 +49,3 @@ subprocess.call(
 )
 cubit.destroy()
 subprocess.call([PVPYTHON, r"C:\Projects\effective_yield_surface\postprocess.py"])
-
