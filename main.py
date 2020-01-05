@@ -14,7 +14,6 @@ from fidesys import FidesysComponent
 
 for subpath in FIDESYS_PYTHONPATH:
     sys.path.append(FIDESYS_BASE_FOLDER + subpath)
-
 os.environ["PATH"] = (
     ";".join(FIDESYS_BASE_FOLDER + subpath for subpath in FIDESYS_LIBPATH)
     + ";"
@@ -39,13 +38,13 @@ fc.start_up_no_args()
 
 for command in script:
     cubit.cmd(command)
-fc.writeFC(r"C:\Projects\effective_yield_surface\test.fc", True)
+fc.writeFC(r"Z:\effective_yield_surface\calc.fc", True)
 subprocess.call(
     [
         FIDESYS_CALC,
-        r"--input=C:\Projects\effective_yield_surface\test.fc",
-        r"--output=C:\Projects\effective_yield_surface\test.pvd",
+        r"--input=Z:\effective_yield_surface\calc.fc",
+        r"--output=Z:\effective_yield_surface\calc.pvd",
     ]
 )
 cubit.destroy()
-subprocess.call([PVPYTHON, r"C:\Projects\effective_yield_surface\postprocess.py"])
+subprocess.call([PVPYTHON, r"Z:\effective_yield_surface\postprocess.py"])
