@@ -19,3 +19,5 @@ for phi in range(0, 361, 120):
         ]
     )
     subprocess.call([PVPYTHON, r"Z:\effective_yield_surface\postprocess.py"])
+
+cleanup()

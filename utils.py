@@ -1,5 +1,6 @@
 from glob import glob
-from os import remove, rmdir
+from os import remove
+from shutil import rmtree
 
 
 def cleanup():
@@ -9,4 +10,4 @@ def cleanup():
         to_delete.extend(glob(pattern))
     for item in to_delete:
         remove(item)
-    rmdir('calc')
+    rmtree("calc")
