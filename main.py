@@ -4,7 +4,7 @@ from math import cos, sin
 from config import PVPYTHON
 from utils import cleanup
 
-cleanup()
+cleanup(start=True)
 
 for phi in range(0, 361, 120):
     displacement_x = 0.05 * cos(phi)
