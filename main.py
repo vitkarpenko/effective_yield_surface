@@ -1,14 +1,14 @@
 import subprocess
-from math import cos, sin
+from math import cos, radians, sin
 
 from config import PVPYTHON
 from utils import cleanup
 
 cleanup(start=True)
 
-for phi in range(0, 361, 120):
-    displacement_x = 0.05 * cos(phi)
-    displacement_y = 0.05 * sin(phi)
+for phi in range(0, 361, 20):
+    displacement_x = 0.05 * cos(radians(phi))
+    displacement_y = 0.05 * sin(radians(phi))
 
     subprocess.call(
         [

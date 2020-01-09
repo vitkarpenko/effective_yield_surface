@@ -1,10 +1,10 @@
 from glob import glob
 from os import remove
-from os.path import isdir
+from os.path import isdir, isfile
 from shutil import rmtree
 
 
-def cleanup(start):
+def cleanup(start=False):
     patterns_to_delete = ["calc.fc", "calc.pvd", "cubit*"]
     to_delete = []
     for pattern in patterns_to_delete:
@@ -13,5 +13,5 @@ def cleanup(start):
         remove(item)
     if isdir("calc"):
         rmtree("calc")
-    if start and isdir("outs.csv"):
+    if start and isfile("outs.csv"):
         remove("outs.csv")
