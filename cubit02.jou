@@ -1,0 +1,17 @@
+## 
+## Trelis Version 16.6b
+## Trelis Build 6e69e551ce
+## Revised Fri Dec 28 14:22:14 2018 -0700
+## Running 01/09/2020 04:58:13 PM
+## Command Options:
+reset
+create surface rectangle width 10 zplane
+surface 1 size auto factor 3
+mesh surface 1
+create material 1 from "Углеродистая сталь"
+block 1 add surface 1
+block 1 material 1
+block 1 element plane
+create periodic master curve 4 slave curve 2 displacement value 0.0407090485263
+create periodic master curve 3 slave curve 1 displacement value 0.0290305592106
+analysis type static elasticity dim2 planestress
