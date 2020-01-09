@@ -34,3 +34,4 @@ principial_averaged_stress = [
         + averaged_stress[0][1] ** 2
     ),
 ]
+print(principial_averaged_stress)
