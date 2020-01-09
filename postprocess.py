@@ -1,3 +1,4 @@
+import csv
 from math import sqrt
 
 from paraview import servermanager
@@ -34,4 +35,6 @@ principial_averaged_stress = [
         + averaged_stress[0][1] ** 2
     ),
 ]
-print(principial_averaged_stress)
+with open("outs.csv", "a+") as outs:
+    writer = csv.writer(outs)
+    writer.writerow(principial_averaged_stress)
