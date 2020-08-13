@@ -2,12 +2,8 @@ import os
 import subprocess
 import sys
 
-from config import (
-    FIDESYS_BASE_FOLDER,
-    FIDESYS_CALC,
-    FIDESYS_LIBPATH,
-    FIDESYS_PYTHONPATH,
-)
+from config import (FIDESYS_BASE_FOLDER, FIDESYS_CALC, FIDESYS_LIBPATH,
+                    FIDESYS_PYTHONPATH)
 
 for subpath in FIDESYS_PYTHONPATH:
     sys.path.append(FIDESYS_BASE_FOLDER + subpath)
@@ -35,12 +31,12 @@ fc.start_up_no_args()
 
 for command in script:
     cubit.cmd(command)
-fc.writeFC(r"Z:\effective_yield_surface\calc.fc", True)
+fc.writeFC(r"C:\Projects\effective_yield_surface\calc.fc", True)
 subprocess.call(
     [
         FIDESYS_CALC,
-        r"--input=Z:\effective_yield_surface\calc.fc",
-        r"--output=Z:\effective_yield_surface\calc.pvd",
+        r"--input=C:\Projects\effective_yield_surface\calc.fc",
+        r"--output=C:\Projects\effective_yield_surface\calc.pvd",
     ]
 )
 cubit.destroy()

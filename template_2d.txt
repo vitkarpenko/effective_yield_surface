@@ -6,6 +6,6 @@ create material 1 from 'Углеродистая сталь'
 block 1 add surface 1
 block 1 material 1
 block 1 element plane
-create periodic master curve 4  slave curve 2  displacement value {displacement_x}
-create periodic master curve 3  slave curve 1  displacement value {displacement_y}
+create periodic master curve 4 slave curve 2 displacement value {displacement_x}
+create periodic master curve 3 slave curve 1 displacement value {displacement_y}
 analysis type static elasticity dim2 planestress

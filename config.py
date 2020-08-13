@@ -1,4 +1,4 @@
-FIDESYS_BASE_FOLDER = r"C:\Program Files\Fidesys\CAE-Fidesys-2019"
+FIDESYS_BASE_FOLDER = r"C:\Program Files\Fidesys\CAE-Fidesys-2020.0"
 FIDESYS_VERSION = FIDESYS_BASE_FOLDER + r"\preprocessor\VERSION"
 FIDESYS_COM_PATH = FIDESYS_BASE_FOLDER + r"\preprocessor\bin\fidesys.com"
 FIDESYS_CALC = FIDESYS_BASE_FOLDER + r"\bin\FidesysCalc.exe"
@@ -13,4 +13,4 @@ FIDESYS_LIBPATH = [
     r"\preprocessor\bin",
     r"\preprocessor\bin\acis\code\bin",
 ]
-PVPYTHON = r"C:\Program Files\Fidesys\CAE-Fidesys-2019\postprocessor\pvpython.exe"
+PVPYTHON = r"C:\Program Files\Fidesys\CAE-Fidesys-2020.0\postprocessor\pvpython.exe"

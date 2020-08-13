@@ -13,7 +13,7 @@ def get_mean_component(array, component_index):
     )
 
 
-reader = PVDReader(FileName=r"Z:\effective_yield_surface\calc.pvd")
+reader = PVDReader(FileName=r"C:\Projects\effective_yield_surface\calc.pvd")
 data = servermanager.Fetch(reader)
 point_data = data.GetPointData()
 
@@ -36,5 +36,4 @@ principial_averaged_stress = [
     ),
 ]
 with open("outs.csv", "a+") as outs:
-    writer = csv.writer(outs)
-    writer.writerow(principial_averaged_stress)
+    outs.write('{},{}\n'.format(principial_averaged_stress[0], principial_averaged_stress[1]))
