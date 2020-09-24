@@ -2,8 +2,12 @@ import os
 import subprocess
 import sys
 
-from config import (FIDESYS_BASE_FOLDER, FIDESYS_CALC, FIDESYS_LIBPATH,
-                    FIDESYS_PYTHONPATH)
+from config import (
+    FIDESYS_BASE_FOLDER,
+    FIDESYS_CALC,
+    FIDESYS_LIBPATH,
+    FIDESYS_PYTHONPATH,
+)
 
 for subpath in FIDESYS_PYTHONPATH:
     sys.path.append(FIDESYS_BASE_FOLDER + subpath)

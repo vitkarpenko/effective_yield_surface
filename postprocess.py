@@ -36,4 +36,9 @@ principial_averaged_stress = [
     ),
 ]
 with open("outs.csv", "a+") as outs:
-    outs.write('{},{}\n'.format(principial_averaged_stress[0], principial_averaged_stress[1]))
+    outs.write(
+        "{},{}\n".format(principial_averaged_stress[0], principial_averaged_stress[1])
+    )
+    outs.write(
+        "{},{}\n".format(principial_averaged_stress[1], principial_averaged_stress[0])
+    )
