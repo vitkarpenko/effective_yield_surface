@@ -1,7 +1,7 @@
 #reset
 #create surface rectangle width 10 zplane
-#create surface ellipse major radius 2 minor radius 1 zplane
-#rotate Surface 2  angle 20  about Z include_merged
+#create surface ellipse major radius 1 minor radius 1 zplane
+#rotate Surface 2 angle 24 about Z include_merged
 #subtract surface 2 from surface 1
 #surface 3 size auto factor 1
 #mesh surface 3
@@ -12,6 +12,7 @@
 #create periodic master curve 4 slave curve 2 displacement value {displacement_x}
 #create periodic master curve 3 slave curve 1 displacement value {displacement_y}
 #analysis type static elasticity dim2 planestress
+
 reset
 create surface rectangle width 10 zplane
 surface 1 size auto factor 3

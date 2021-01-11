@@ -13,4 +13,4 @@ FIDESYS_LIBPATH = [
     r"\preprocessor\bin",
     r"\preprocessor\bin\acis\code\bin",
 ]
-PVPYTHON = r"C:\Program Files\Fidesys\CAE-Fidesys-2020.0\postprocessor\pvpython.exe"
+PVPYTHON = FIDESYS_BASE_FOLDER + r"\postprocessor\pvpython.exe"
